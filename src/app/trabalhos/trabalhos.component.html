@@ -1,0 +1,17 @@
+<ul class="experiencias__lista">
+  <app-trabalho
+    *ngFor="let trabalho of trabalhos; let i = index"
+    [ngStyle]="{width: width + '%'}"
+    (mouseleave)="indiceSelecionado = undefined"
+    (mouseenter)="indiceSelecionado = i"
+    [@saltarTrigger]="indiceSelecionado === i ? 'maior': 'normal'"
+    [empresa]="trabalho.empresa"
+    [cargo]="trabalho.cargo"
+    [periodo]="trabalho.periodo"
+    [resumo]="trabalho.resumo"
+    [atividades]="trabalho.atividades"
+    [tecnologias]="trabalho.tecnologias"
+  >
+
+  </app-trabalho>
+</ul>

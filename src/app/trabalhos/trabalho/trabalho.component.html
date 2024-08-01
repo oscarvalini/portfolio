@@ -1,0 +1,43 @@
+<li
+  [@verMaisTrigger]="verMais ? 'verMenos' : 'verMais'" class="experiencias__item">
+  <h1 *ngIf="empresa">{{ empresa }}</h1>
+
+  <div *ngIf="periodo" class="periodo">
+    <p>Início: <time>{{ periodo.inicio }}</time></p>
+    <p>{{ periodo.fim ? 'Fim: ' + periodo.fim : 'Atualmente'}}</p>
+  </div>
+
+  <div *ngIf="cargo" class="cargo">
+    <h2>Cargo</h2>
+    <p>{{ cargo }}</p>
+  </div>
+
+  <div class="resumo">
+    <h2>Descrição</h2>
+    <p>{{resumo}}</p>
+  </div>
+
+  <div class="atividades">
+    <h2>Atividades</h2>
+    <ul class="atividades__lista">
+      <li *ngFor="let atividade of atividades" class="atividades__item">{{atividade}}</li>
+    </ul>
+  </div>
+
+  <div class="tecnologias">
+    <h2>Tecnologias</h2>
+    <ul class="tecnologias__lista">
+      <li *ngFor="let tecnologia of tecnologias"><app-badge>{{ tecnologia }}</app-badge></li>
+    </ul>
+  </div>
+
+</li>
+<button
+  (mouseenter)="botaoFocado = true"
+  (mouseleave)="botaoFocado = false"
+  [@botaoTrigger]="botaoFocado ? 'focado' : 'normal'"
+  (click)="verMais = !verMais">
+    {{ verMais ? 'Ver Menos' : 'Ver Mais' }}
+</button>
+
+<div class="atual">atual</div>

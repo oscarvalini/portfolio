@@ -1,0 +1,36 @@
+<!-- <button>Me conheça melhor</button> -->
+
+<!-- <ng-container *ngIf="conhecer"> -->
+  <header id="header" #header>
+    <div></div>
+    <nav>
+      <ul>
+        <li><a href="#sobre-mim" [@navItemTrigger]="menuSelecionado === 0 ? 'selecionado': 'normal'" (mouseenter)="menuSelecionado = 0" (mouseleave)="menuSelecionado = undefined">Sobre mim</a></li>
+        <li><a href="#experiencia" [@navItemTrigger]="menuSelecionado === 1 ? 'selecionado': 'normal'" (mouseenter)="menuSelecionado = 1" (mouseleave)="menuSelecionado = undefined">Experiência</a></li>
+        <li><a href="#formacao" [@navItemTrigger]="menuSelecionado === 2 ? 'selecionado': 'normal'" (mouseenter)="menuSelecionado = 2" (mouseleave)="menuSelecionado = undefined">Formação</a></li>
+        <li><a href="#projetos" [@navItemTrigger]="menuSelecionado === 3 ? 'selecionado': 'normal'" (mouseenter)="menuSelecionado = 3" (mouseleave)="menuSelecionado = undefined">Projetos</a></li>
+      </ul>
+    </nav>
+    <button (click)="trocarTema()"><span>Mudar Tema</span></button>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h1 moverAoMovimentoDoMouse>Oscar Valini Cunha</h1>
+      <img src="assets/portfolio.png" />
+    </section>
+    <section id="sobre-mim">
+      <h2>Sobre mim</h2>
+      <p>Olá, meu nome é Oscar! Sou um desenvolvedor de software Web com 3 anos de carreira</p>
+      <p>Minha principal ferramenta de trabalho tem sindo o Angular, por isso me qualifico como um desenvoledor Front-End</p>
+      <p>No entanto passuo expierîencia com desenvolviento backend utilizando NodeJS e Mobile com Flutter</p>
+    </section>
+    <section id="experiencia">
+      <h2>Experiência</h2>
+      <app-trabalhos></app-trabalhos>
+    </section>
+
+    <button id="fab-subir" [ngClass]="{hide: !mostrarBotaoSubir}"><a href="#header">Subir</a></button>
+  </main>
+
+<!-- </ng-container> -->
